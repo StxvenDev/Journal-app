@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
+import {getAnalytics} from 'firebase/analytics';
 import {getFirestore} from 'firebase/firestore/lite';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -12,10 +13,12 @@ const firebaseConfig = {
   projectId: "react-journal-app-da3e4",
   storageBucket: "react-journal-app-da3e4.appspot.com",
   messagingSenderId: "187093303286",
-  appId: "1:187093303286:web:e1a004257b9b68284691d7"
+  appId: "1:187093303286:web:e1a004257b9b68284691d7",
+  measurementId: "G-GKMQZTQXRL"
 };
 
 // Initialize Firebase
 const FirebaseApp = initializeApp(firebaseConfig);
 export const FirebaseAuth = getAuth(FirebaseApp);
 export const FirebaseDb = getFirestore(FirebaseApp);
+export const FirebaseAnalytics = getAnalytics(FirebaseApp);
