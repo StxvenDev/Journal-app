@@ -14,7 +14,7 @@ export const LoginPage = () => {
     email : 'steven.mail@email.com',
     password : '220604'
   });
-  const isAuthenticating = () => useMemo( status === 'Checking', [status]);
+  const isAuthenticating = useMemo(() => status === 'Checking', [status]);
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -59,7 +59,7 @@ export const LoginPage = () => {
                   type='submit' 
                   variant="contained" 
                   fullWidth 
-                  disabled={!isAuthenticating}
+                  disabled={!!isAuthenticating}
                 >
                   Login
                 </Button>
@@ -69,7 +69,7 @@ export const LoginPage = () => {
                   variant="contained" 
                   fullWidth 
                   onClick={onGoogleSignIn}
-                  disabled={!isAuthenticating}
+                  disabled={!!isAuthenticating}
                 >
                   <Google />
                   <Typography sx={{ml:1 }}>Google</Typography>
