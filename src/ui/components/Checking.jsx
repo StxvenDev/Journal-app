@@ -11,7 +11,7 @@ export const Checking = () => {
         sx={{minHeight:'100vh', backgroundColor:'primary.main', padding:4}}
     >
         <Grid
-            item
+            container
             justifyContent='center'
             direction='row'
         >
