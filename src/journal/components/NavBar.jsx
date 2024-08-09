@@ -3,7 +3,7 @@ import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material"
 import { useDispatch } from "react-redux"
 import { startLogoutFirebase } from "../../store/auth/thunks";
 
-export const NavBar = ({drawerWidth = 240}) => {
+export const NavBar = ({drawerWidth = 270}) => {
     const dispatch = useDispatch();
     const onLogout = () => {
         dispatch(startLogoutFirebase())
