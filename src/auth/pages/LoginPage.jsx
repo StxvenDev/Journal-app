@@ -8,12 +8,15 @@ import { chekingAuthentication, startCheckingGoogle, startLoginWithEmailAndPassw
 import { useMemo } from 'react'
 
 export const LoginPage = () => {
-  const {status, errorMessage} = useSelector(state => state.auth);
-  const dispatch = useDispatch();
-  const {email, password, onInputChange, formState} = useForm({
+
+  const initialForm = {
     email : 'steven.mail@email.com',
     password : '220604'
-  });
+  }
+
+  const {status, errorMessage} = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  const {email, password, onInputChange, formState} = useForm(initialForm);
   const isAuthenticating = useMemo(() => status === 'Checking', [status]);
 
   const onSubmit = (event) => {

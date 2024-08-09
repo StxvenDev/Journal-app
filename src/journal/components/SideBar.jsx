@@ -6,6 +6,7 @@ import { SideBarItem } from "./SideBarItem";
 export const SideBar = ({drawerWidth = 270}) => {
     const {displayName} = useSelector(state =>  state.auth);
     const {notes} = useSelector(state => state.journal);
+    
   return (
     <Box
         component="nav"
