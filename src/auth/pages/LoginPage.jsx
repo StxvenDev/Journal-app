@@ -10,8 +10,8 @@ import { useMemo } from 'react'
 export const LoginPage = () => {
 
   const initialForm = {
-    email : 'steven.mail@email.com',
-    password : '220604'
+    email : '',
+    password : ''
   }
 
   const {status, errorMessage} = useSelector(state => state.auth);
