@@ -5,7 +5,7 @@ import { useForm } from "../../hooks/useForm"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useMemo, useRef } from "react"
 import { setActiveNote } from "../../store/journal/journalSlice"
-import { startSaveNote } from "../../store/journal/thunks"
+import { startSaveNote, startUploadingFiles } from "../../store/journal/thunks"
 import Swal from "sweetalert2"
 import 'sweetalert2/dist/sweetalert2.css'
 
@@ -45,8 +45,7 @@ export const NoteViews = () => {
 
     const onFileInputChange = ({target}) => {
         if( target.files === 0 ) return;
-        console.log('loading files')
-        // dispatch(startUploadingFiles(target.files));
+        dispatch(startUploadingFiles(target.files));
     }
     
 
@@ -67,14 +66,14 @@ export const NoteViews = () => {
 
             <IconButton 
                 color="primary"
-                disable={!!isSaving} 
                 onClick={ () => fileInputRef.current.click() }
+                disabled={isSaving}
             >
                 <UploadOutlined />
             </IconButton>
 
             <Button 
-                disable={!!isSaving}
+                disabled={isSaving}
                 color="primary" 
                 sx={{padding:2}}
                 onClick={onSaveNote}
