@@ -31,7 +31,7 @@ export const LoginPage = () => {
   }
 
   return (
-    <AuthLayout title='Login'>
+    <AuthLayout title='Iniciar sesion'>
         <form action="" onSubmit={onSubmit} >
           <Grid container>
             <Grid item xs={12} sx={{mt: 2}} >
@@ -72,6 +72,7 @@ export const LoginPage = () => {
                   variant="contained" 
                   fullWidth 
                   disabled={!!isAuthenticating}
+                  sx={{ backgroundColor: "secondary.main" }}
                 >
                   Login
                 </Button>
@@ -82,6 +83,7 @@ export const LoginPage = () => {
                   fullWidth 
                   onClick={onGoogleSignIn}
                   disabled={!!isAuthenticating}
+                  sx={{ backgroundColor: "secondary.main" }}
                 >
                   <Google />
                   <Typography sx={{ml:1 }}>Google</Typography>

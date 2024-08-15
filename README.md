@@ -1,9 +1,30 @@
-# React + Vite
+# JournalApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Construida con el fin de guardar notas o recordar dias importantes para las personas.
 
-Currently, two official plugins are available:
+- Obtener los modulos de node
+```
+    npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# Journal-app" 
+- Levantar la aplicacion 
+```
+    npm run dev
+```
+
+
+<!-- |syntax|description|
+| ------ | ----------- |
+|dato1 | dato 2    |
+|dato1 | dato 2    |
+|dato1 | dato 2    |
+|dato1 | dato 2    | -->
+
+
+## Stack usado
+- React
+- Redux
+- Firestore
+- Firebase
+
+

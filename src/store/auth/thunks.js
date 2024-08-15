@@ -1,4 +1,5 @@
 import { loginWithEmailAndPassword, logoutFirebase, signInWithGoogle, signWithEmailAndPassword } from "../../firebase/providers";
+import { clearNotesLogout } from "../journal/journalSlice";
 import { chekingCredentials, login, logout } from "./authSlice"
 
 export const chekingAuthentication = () => {
@@ -11,7 +12,6 @@ export const startCheckingGoogle = () => {
     return async (dispatch) => {
         dispatch(chekingCredentials());
         const result = await signInWithGoogle();
-        console.log(result);
         if(!result.ok) return dispatch(logout(result.errorMessage));        
         dispatch(login(result));
     }
@@ -38,6 +38,7 @@ export const startLoginWithEmailAndPassword = ({email, password}) => {
 export const startLogoutFirebase = () => {
     return async (dispatch) => {
         await logoutFirebase();
+        dispatch( clearNotesLogout() )
         dispatch(logout());
     }
 }

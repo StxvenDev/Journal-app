@@ -1,5 +1,5 @@
 import { TurnedInNot } from '@mui/icons-material';
-import { Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Divider, Grid, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import React, { useMemo } from 'react'
 import { useDispatch } from 'react-redux';
 import { setActiveNote } from '../../store/journal/journalSlice';
@@ -22,8 +22,7 @@ export const SideBarItem = ({title = '', body, id, date, imageUrls = [] }) => {
           <TurnedInNot />
         </ListItemIcon>
         <Grid container>
-          <ListItemText primary={newTitle} />
-          <ListItemText secondary={body} />
+          <ListItemText primary={newTitle} secondary={body}/>
         </Grid>
       </ListItemButton>
     </ListItem>

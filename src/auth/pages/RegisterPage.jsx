@@ -94,6 +94,7 @@ export const RegisterPage = () => {
                 variant="contained" 
                 fullWidth 
                 disabled={!!isCheckingAuthentication}
+                sx={{ backgroundColor: "secondary.main" }}
               >
                 Crear Cuenta
               </Button>

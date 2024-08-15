@@ -6,7 +6,7 @@ import { startLogoutFirebase } from "../../store/auth/thunks";
 export const NavBar = ({drawerWidth = 270}) => {
     const dispatch = useDispatch();
     const onLogout = () => {
-        dispatch(startLogoutFirebase())
+        dispatch(startLogoutFirebase());
     }
   return (
     <AppBar

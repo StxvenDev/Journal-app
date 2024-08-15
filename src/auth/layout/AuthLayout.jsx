@@ -21,7 +21,11 @@ export const AuthLayout = ({ children, title = ''}) => {
             borderRadius: 2 
         }}
       >
-        <Typography variant="h5" fontWeight={500} color="primary.main" >{title}</Typography>
+        <Typography 
+          variant="h5" 
+          fontWeight={500} 
+          color="secondary.main" 
+        >{title}</Typography>
         {children}
       </Grid>
     </Grid>

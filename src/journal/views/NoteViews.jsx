@@ -1,11 +1,11 @@
-import { SaveOutlined, UploadOutlined } from "@mui/icons-material"
+import { DeleteOutline, SaveOutlined, UploadOutlined } from "@mui/icons-material"
 import { Button, Grid, IconButton, TextField, Typography } from "@mui/material"
 import { ImageGallery } from "../components"
 import { useForm } from "../../hooks/useForm"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useMemo, useRef } from "react"
 import { setActiveNote } from "../../store/journal/journalSlice"
-import { startSaveNote, startUploadingFiles } from "../../store/journal/thunks"
+import { startDeletingNote, startSaveNote, startUploadingFiles } from "../../store/journal/thunks"
 import Swal from "sweetalert2"
 import 'sweetalert2/dist/sweetalert2.css'
 
@@ -47,6 +47,10 @@ export const NoteViews = () => {
         if( target.files === 0 ) return;
         dispatch(startUploadingFiles(target.files));
     }
+
+    const onDeleteNote = () => {
+        dispatch(startDeletingNote());
+    }
     
 
   return (
@@ -65,16 +69,16 @@ export const NoteViews = () => {
             />
 
             <IconButton 
-                color="primary"
+                color = "secondary"
                 onClick={ () => fileInputRef.current.click() }
                 disabled={isSaving}
             >
-                <UploadOutlined />
+                <UploadOutlined sx={{fontSize: 30, mr: 1}}/>
             </IconButton>
 
             <Button 
                 disabled={isSaving}
-                color="primary" 
+                color="secondary" 
                 sx={{padding:2}}
                 onClick={onSaveNote}
             >
@@ -107,8 +111,20 @@ export const NoteViews = () => {
                 onChange={onInputChange}
             />
         </Grid>
+        
+        <Grid container direction="row" justifyContent="end">
+            <Grid item>
+                <Button 
+                    color="error"
+                    onClick={onDeleteNote}
+                >
+                    <DeleteOutline sx={{fontSize: 30, mr: 1}}/>
+                    Eliminar
+                </Button>
+            </Grid>
+        </Grid>
         {/* Galeria de imagenes */}
-        <ImageGallery />
+        <ImageGallery images={note.imageUrls}/>
     </Grid>
   )
 }
