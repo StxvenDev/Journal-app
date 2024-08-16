@@ -16,7 +16,7 @@ export const LoginPage = () => {
 
   const {status, errorMessage} = useSelector(state => state.auth);
   const dispatch = useDispatch();
-  const {email, password, onInputChange, formState} = useForm(initialForm);
+  const {email, password, onInputChange, formState} = useForm({initialForm});
   const isAuthenticating = useMemo(() => status === 'Checking', [status]);
 
   const onSubmit = (event) => {
